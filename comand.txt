@@ -1,0 +1,16 @@
+# Para iniciar git
+	> git init
+# Añadir la carpeta de trabajo local con la remota de github
+	> git remote add origin https://github.com/ruta/del/repositorio.git
+# Sincronizar los datos locales con el remoto de github (primera vez)
+	> git push -u origin master
+# Meter (todos) los archivos nuevos al stay in area de la carpeta local
+	> git add .
+# Para ver el estado de git
+	> git status
+# Realizar un commit con comentario desde consola al archivo nuevo 
+	> git commit -m "first commit"
+# Sincronización local con la remota de git
+	> git push origin master
+# Ver la rama en la que estoy
+	> git branch

@@ -13,3 +13,4 @@ def cuentaNum(numero):
 
 print(cuentaNum(1000))
 print(list(range(0, 101)))
+print(list(range(0, 101, 2)))

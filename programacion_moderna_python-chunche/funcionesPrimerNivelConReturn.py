@@ -6,6 +6,7 @@ def maxi(*l): # Entrada de parámetros
         if l[ix] > m:
             m = l[ix]
     return m
+
 def mini(*l): # Entrada de parámetros 
     if len(l) == 0:
         return 0
@@ -22,11 +23,13 @@ def media(*l):
     for valor in l:
         suma += valor
     return suma / len(l)
+
 funciones={
     'max':maxi,
     'min':mini,
     'med':media
     }
+
 def returnF(nombre):
     if nombre.lower() in funciones.keys():
         return funciones[nombre]

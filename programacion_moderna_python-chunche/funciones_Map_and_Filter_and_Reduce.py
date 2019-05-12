@@ -9,13 +9,22 @@
 
 from functools import reduce
 
+def doble(x):
+    return x+x
+
+def esPar(c):
+    return c % 2 == 0
+
 
 lista = [1,3,5,8,-1,-4,-6]
 
+
 # map actua sobre cada uno de los items del operador de 'lista'
 listaDobles = map(lambda x: x*2, lista)
+listaDoble1 = map(doble,lista) # Usando funcion definida
 # filter actua como filtro en el resultado del programa
 listaPares = filter(lambda x: x % 2 == 0, lista)
+listaPares1 = filter(doble, lista)
 # reduce actua como 'resumen' del resultado a obtener
 resultadoRed = reduce(lambda x,y: x + y, lista)
 
@@ -25,7 +34,9 @@ resultadoRed = reduce(lambda x,y: x + y, lista)
 
 print("Lista del doble: " )
 print(list(listaDobles))
+print(list(listaDoble1))
 print("Lista de los pares: ")
 print(list(listaPares))
+print(list(listaPares1))
 print("Solución devuelta de 'reduce' :")
 print(resultadoRed) # 1+3+5+4+8-1-4-6=6

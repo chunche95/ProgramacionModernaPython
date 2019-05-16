@@ -12,9 +12,9 @@ class Perro():
     # Funciones metodos que no se definen en el init pero si pertenecen a la clase 'perro'
     def ladrar(self):
         if self.peso >= 8:
-            print("GUAU, GUAU")
+            print("GUAU!!!, GUAU!!!")
         else:
-            print("guau guau")
+            print("guau! guau!")
     
     # Sirve para redefinir la variable, en este caso la variable nombre
     #   def __str__(self):
@@ -23,16 +23,23 @@ class Perro():
     def __str__(self):
         return "Perro {}, e: {}, p: {}".format(self.nombre,self.edad,self.peso)
     
-
+# Herencia de los métodos de la clase Perro
 class PerroAsistente(Perro):
     # Definicion del cosntructor
     def __init__(self, nombre, edad, peso, amo):
         Perro.__init__(self, nombre, edad, peso)
         self.amo = amo
-        
+        self.trabajando = False
+    # Sobreescribir un método
     def __str__(self):
         return "Perro de asistencia de {}".format(self.amo)
     
-        
-        
+    def pasear(self):
+        print("{} ayudo a mi dueño {} a paser".format (self.nombre, self.amo))
+    
+    def ladrar(self):
+        if self.trabajando:
+            print("Ssshhh, no puedo ladrar")
+        else:
+            Perro.ladrar(self)
         

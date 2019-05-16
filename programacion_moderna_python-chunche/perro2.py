@@ -50,11 +50,11 @@ class PerroAsistente(Perro):
     def __init__(self, nombre, edad, peso, amo):
         Perro.__init__(self, nombre, edad, peso)
         self.amo = amo
-        self.__trabajando = False
+        self.__trabajando = False # Ahora es un atributo privado
     # Sobreescribir un método
     def __str__(self):
         return "Perro de asistencia de {}".format(self.amo)
-    
+    # Definicion de nuevos métodos propios de la nueva clase
     def pasear(self):
         print("{} ayudo a mi dueño {} a paser".format (self.nombre, self.amo))
     
@@ -63,6 +63,8 @@ class PerroAsistente(Perro):
             print("Ssshhh, no puedo ladrar")
         else:
             Perro.ladrar(self)
+            
+    # Creacion de un método getter y setter para acceder a un atributo privado.
      def trabajando(self, valor=None):
          if valor == None:
              return self.__trabajando

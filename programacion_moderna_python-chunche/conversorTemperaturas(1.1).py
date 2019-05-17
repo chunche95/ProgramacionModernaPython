@@ -10,7 +10,7 @@
 # @Version: 1.1
 # @Author: Chunche
 #
-#
+#         TERMOTETRO().
 #  |~~~~~~~~~~~~~~~~~~~~~~~~~|
 #  |     unidadM[C,F]        |  ----\                        ESTADO.
 #  |     temperatura         |       > (Salida por pantalla de la temperatura convertida.)
@@ -22,10 +22,11 @@
 #
 
 class Termometro():
+    # Contructor de inicialización, con atributos privados
     def __init__(self):
-        self.__unidadM = 'C'
+        self.__unidadM = 'C' # Inicialización por defecto con los Celsius.
         self.__temperatura = 0
-    
+    # Conversor (privada).
     def __conversor(self, temperatura, unidad):
         if unidad == 'C':
             return "{} ºF".format(temperatura * 9/5 + 32)
@@ -33,11 +34,11 @@ class Termometro():
             return "{} ºC".format((temperatura -32) * 5/9)
         else:
             return "Temperatura incorrecta!"
-
+    # Formato de salida
     def __str__(self):
         return "{}º {}".format(self.__temperatura, self.__unidadM)
 
-    # Creacion de los getter y setter
+    # Creacion de los getter y setter -- Llamada de los atributos provados del constructor inicial.
     def unidadMedida(self, uniM=None):
         if uniM == None:
             return self.__unidadM
@@ -49,7 +50,7 @@ class Termometro():
             return self.__temperatura
         else:
             self.__temperatura = temperatura
-            
+    # Ejecución de la conversión e informe de los datos.      
     def mide(self, uniM = None):
         if uniM == None or uniM == self.__unidadM:
             return self.__str__()

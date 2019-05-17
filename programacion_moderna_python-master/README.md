@@ -2,7 +2,7 @@
              BootCamp Curso Programación moderna con Python.
              Profesor : Ramón Maldonado.
              Académia : KeepCoding.
-<hr>             
+<br>             
 @Version: 1.0
 <hr>
 @Author: Pauchino09

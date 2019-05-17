@@ -54,9 +54,10 @@ class Termometro():
         else:
             return self.conversor(self.temperatura, uniM)
 
+# Creacion de un objeto de tipo termometro llamado 'c'.
 c = Termometro()
+# Conversion
 print(c.conversor(0,"C"))
-
 print(c.conversor(32,"F"))
 
 

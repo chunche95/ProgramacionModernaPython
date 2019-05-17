@@ -35,7 +35,7 @@ class Termometro():
             return "Temperatura incorrecta!"
 
     def __str__(self):
-        return "{} º {}".format(self.temperatura, self.unidad)
+        return "{}º {}".format(self.__temperatura, self.__unidadM)
 
     # Creacion de los getter y setter
     def unidadMedida(self, uniM=None):
@@ -51,21 +51,25 @@ class Termometro():
             self.__temperatura = temperatura
             
     def mide(self, uniM = None):
-        if uniM == None or uniM == self.unidadM:
+        if uniM == None or uniM == self.__unidadM:
             return self.__str__()
         else:
-            return self.__conversor(self.temperatura, self.__unidadM)
+            return self.__conversor(self.__temperatura, self.__unidadM)
 
-t = Termometro()
+
+
+
+#t = Termometro()
 # Unidades de medida
-print(t.unidadMedida())
+#print(t.unidadMedida())
 
 # Inicializamos con una temperatura de entrada
-t.temp(32)
+#t.temp(32)
 
 #Sacamos por pantalla la conversion del dato inicializado
-t.mide('F')
-t.mide('C')
+#t.mide('F')
+#t.mide('C')
+
 # Ver conversion 
 # print(t.__conversor(0,"C"))
 # print(t.__conversor(32,"F"))

@@ -69,12 +69,12 @@ class Circuito():
                 tortuga.forward(avance)
                 if tortuga.position()[0] >= self.__finishline:
                     tenemosGanadora = True
-                    
+                    print("La tortuga {} ha ganado".format(tortuga.color()[0]))
                 
         
 # Ejecucion como módulo principal, así si lo importo en otro programa, no me crea la pantalla Screen    
 if __name__ == '__main__':
-    circuito = Circuito(440, 280)
+    circuito = Circuito(840, 480)
     circuito.competir()
 
         

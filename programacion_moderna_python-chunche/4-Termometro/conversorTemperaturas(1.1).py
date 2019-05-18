@@ -13,7 +13,7 @@
 #         TERMOTETRO().
 #  |~~~~~~~~~~~~~~~~~~~~~~~~~|
 #  |     unidadM[C,F]        |  ----\                        ESTADO.
-#  |     temperatura         |       > (Salida por pantalla de la temperatura convertida.)
+#  |     temperatura         |  =====> (Salida por pantalla de la temperatura convertida.)
 #  |-------------------------|  ----/
 #  |   mide(unid opcional)   | --> (medida)
 #  | conversor(temp,inidadM) |

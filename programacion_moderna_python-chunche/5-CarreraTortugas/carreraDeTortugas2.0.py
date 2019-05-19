@@ -69,8 +69,9 @@ class Circuito():
                 tortuga.forward(avance)
                 if tortuga.position()[0] >= self.__finishline:
                     tenemosGanadora = True
-                    print("La tortuga {} ha ganado".format(tortuga.color()[0]))
-                
+                    print("La tortuga {} ha ganado!".format(tortuga.color()[0])) # para que se vea la propiedad color es necesario poner paréntesis,  color(),
+                    print("The turtle {} win the race!".format(tortuga.color()[0])) # sinolo tomará como una variable común sin asignar.
+                    break # Para salir del bucle y  las tortugas 'dejen de tirar los dados'.
         
 # Ejecucion como módulo principal, así si lo importo en otro programa, no me crea la pantalla Screen    
 if __name__ == '__main__':

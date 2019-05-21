@@ -1,6 +1,6 @@
-#
-#
-#
+# @Title: Ciclo for, recorriendo listas
+# @Description: Formas de recorrer una lista con un bucle 'for'.
+# @Author: Chunche
 lista=("Pantalla","Teclado","Raton","Disco","LED's","USB","Altavoces")
 # Primero --> Conozco la longitud de la lista
 for i in range (0,4):

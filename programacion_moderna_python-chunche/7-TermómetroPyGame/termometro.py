@@ -15,6 +15,10 @@
 import pygame, sys
 from pygame.locals import *
 
+class Termometro():
+    def __init__(self):
+        self.custome = pygame.image.load("pigmonchu/images/termo1.png")
+
 class mainApp():
     termometro = None
     entrada = None
@@ -25,8 +29,11 @@ class mainApp():
         self.__screen = pygame.display.set_mode((290,415))
         # Titulo
         pygame.display.set_caption("Termómetro")
-        # Fondo de pantalla
+        # Fondo de pantalla - Actualizacion del fondo de pantalla para que no queden restos, por si hay movimientos en las imagenes que trabajan sobre el
+        # fondo.
         self.__screen.fill((240,236,200))
+        
+        self.termometro = Termometro()
         
     def __on_close(self):
         pygame.quit()
@@ -37,6 +44,8 @@ class mainApp():
             for event in pygame.event.get():
                 if event.type == QUIT:
                     self.__on_close()
+                    
+            self.__screen.blit(self.termometro.custome, (50,34))
             # Renderizacion de pantalla
             pygame.display.flip()
                     

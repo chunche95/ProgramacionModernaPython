@@ -16,14 +16,15 @@
 
 import pygame
 import sys
+import random
 
 class Runner():
     def __init__(self, x=0, y=0):
         self.custome = pygame.image.load("img/2.png")
-        self.position = (x,y)
+        self.position = [x,y]
         self.name = "Tortugui"
     def avanzar(self):
-        self.position[0] += random.randint(1,6) 
+        self.position[0] += random.randint(1,4) 
         
 class Game():
     runners = []
@@ -55,7 +56,14 @@ class Game():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     gameOver = True
-                    
+            
+            # Avance del corredor - Creamos el metodo para ello llamamos a avanzar()
+            self.runners[0].avanzar()
+            if self.runners[0].position[0] >= self.__finishLine:
+                print ("{} win!".format(self.runners[0].name))
+                gameOver = True
+            
+            
             # Refresacar / renderizar la pantalla.
             self.__screen.blit(self.__background, (0,0))
             self.__screen.blit(self.runners[0].custome, self.runners[0].position)

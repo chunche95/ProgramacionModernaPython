@@ -20,12 +20,13 @@ import random
 
 class Runner():
     __customes = ("1","2","3","4","5",)
-    def __init__(self, x=0, y=0, custome='2'):
-        self.custome = pygame.image.load("img/{}.png".format(custome))
+    def __init__(self, x=0, y=0):
+        ixCustome = random.randint(0,4)
+        self.custome = pygame.image.load("img/{}.png".format(self.__customes[ixCustome]))
         self.position = [x,y]
-        self.name = custome
+        self.name = ""
     def avanzar(self):
-        self.position[0] += random.randint(1,4) 
+        self.position[0] += random.randint(1,6) 
         
 class Game():
     runners = []
@@ -38,7 +39,7 @@ class Game():
         # Creacion de atributos
         self.__screen = pygame.display.set_mode((640,480))
         self.__background = pygame.image.load("img/bg1.png")
-        pygame.display.set_caption("Carrera de tortuguas")
+        pygame.display.set_caption("C@rrer@$ de Bich0$")
         
         for i in range(4):
             theRunner = Runner(self.__startLine,self.__posY[i])
@@ -79,18 +80,18 @@ class Game():
             # Inicializacion de la pantalla
             pygame.display.flip()
             
-             # x += 3
-             #if x >= 250:
-             #   ganador = True
         while True:
             for event in pygame.event.get():
-                if event.type == pygame.QUIT():
+                if event.type == pygame.quit:
                     self.close()
+                    pygame.quit()
+                    sys.exit()
+                    
         
 if __name__ == '__main__':
     # Inicializamos el paquete
     game = Game()
-    pygame.font.init() # Alternativa para versiones antiguas es: 'pygame.font.init()'
+    pygame.init() # Alternativa para versiones antiguas es: 'pygame.font.init()'
     game.competir()
     
     

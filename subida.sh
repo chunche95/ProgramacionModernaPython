@@ -21,8 +21,7 @@ echo "-----------------------------------------------------"
 echo -e "\e[1;33m  Añadiendo comentario a los cambios...  \e"
 echo "-----------------------------------------------------"
 echo ""
-if [ -z $param ]
-then
+if [ -z $param ]; then
 	echo "=========================================================="
 	echo -e "\e[0;31m Añadiendo comentario automático de sistema... \e"
 	echo "=========================================================="

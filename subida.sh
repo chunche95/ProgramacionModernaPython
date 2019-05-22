@@ -41,7 +41,7 @@ echo "--------------------------------"
 echo ""
 git push origin master
 echo "--------------------------------"
-echo -e "\e[1;36m Archivos Subidos \t \e"
+echo -e "\e[1;36m Archivos Subidos  \e"
 echo "--------------------------------"
 echo ""
 sleep 5

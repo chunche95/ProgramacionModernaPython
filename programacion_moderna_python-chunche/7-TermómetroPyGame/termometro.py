@@ -7,7 +7,32 @@
 # El selector de grados nos permitirá cambiar la entrada y si existe un valor debe transformarlo.
 # Así que nuestro programa deberá responder a dos eventos:
 #  - Entrada del teclado
-#  - Clic del ratón sobre el selector de unidades 
+#  - Clic del ratón sobre el selector de unidades
+
+
+'''               "DIAGRAMA"
+
+    +--------------------------------------+
+    |                                      |
+    |    0          +--------------+       |
+    |   | |         |  123         |       |
+    |   | ]         +--------------+       |
+    |   | ]                                |
+    |   | ]       F o--------------o C     |
+    |   |i]                                |
+    |   |i]                                |
+    |   |i]                                |
+    |   |i]                                |
+    |   |i]                                |
+    |   |i]                                |
+    |   |i]                                |
+    |    U                                 |
+    |                                      |
+    |                                      |
+    +--------------------------------------+
+
+
+'''
 #
 # @Version: 1.0
 # @Author: Chunche
@@ -18,6 +43,18 @@ from pygame.locals import *
 class Termometro():
     def __init__(self):
         self.custome = pygame.image.load("pigmonchu/images/termo1.png")
+    
+    def convertir(self,grados, toUnidad):
+        resultado = 0
+        if toUnidad == 'F':
+            resultado = (grados * 9/5) +32
+        elif toUnidad == 'C':
+            resultado = (grados -32) * 5/9
+        else:
+            resultado = grados
+        
+        return resultado
+        
 
 class Selector():
     __tipoUnidad = "C"
@@ -35,13 +72,14 @@ class Selector():
             return self.__customes[0]
         else:
             return self.__customes[1]
+    def unidad(self):
+        return self.__tipoUnidad
         
-    def on_event(self,event):
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if self.__tipoUnidad == 'F':
-                self.__tipoUnidad = 'C'
-            else:
-                self.__tipoUnidad = 'F'
+    def change(self):    
+        if self.__tipoUnidad == 'F':
+            self.__tipoUnidad = 'C'
+        else:
+            self.__tipoUnidad = 'F'
 
 class NumberInput():
     # Atributos
@@ -206,10 +244,14 @@ class mainApp():
                 
                 # Comporbacion de evento de la entrada de valores, valores numericos
                 self.entrada.on_event(event)
-                
-                self.selector.on_event(event)
-            
-            # Pintamos el fondo de pantalla   
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.selector.change()
+                    grados = self.entrada.value()
+                    nuevaUnidad = self.selector.unidad()
+                    print(nuevaUnidad)
+                    temperatura = self.termometro.convertir(grados, nuevaUnidad)
+                    self.entrada.value(temperatura)
+            # Pintamos el fondo de pantalla --> para no dejar rastros de cambio de unidades
             self.__screen.fill((244,236,203))    
                 
             # Dibujamos el termometro en su posicion    

@@ -40,7 +40,7 @@ class mainApp(Tk):
         
         # Variables de control: Variables que responden a eventos, controlan cambios
         self.temperatura = StringVar(value="")
-        self.tipoUnidad = StringVar(value="C")
+        self.tipoUnidad = StringVar(value="F")
         
         # Creacion del método que hace el diseño
         self.createLayout()
@@ -50,7 +50,10 @@ class mainApp(Tk):
         # Texto de 'Grados:'
         self.lblUnidad = ttk.Label(self, text="Grados:").place(x=15, y=45)
         # Botones
-        self.unidadF = ttk.RadioButton(self, text="Fahrenheit", variable=self.tipoUnidad, value="F")
+        self.rb1 = ttk.Radiobutton(self, text="Fahrenheit", variable=self.tipoUnidad, value="F").place(x=20,y=60)
+        self.rb2 = ttk.Radiobutton(self, text="Celsius", variable=self.tipoUnidad, value="C").place(x=20,y=80)
+        self.configure(bg="#DED798")
+        
     def start(self):
         self.mainloop()
 

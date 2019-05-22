@@ -108,12 +108,12 @@ class NumberInput():
             #if event.unicode in '0123456789':
                 self.__strValue += event.unicode
                 self.value(self.__strValue)
-                print(event.unicode)
-                print(self.__strValue, self.__value)
+               # print(event.unicode)
+               # print(self.__strValue, self.__value)
             elif event.key == K_BACKSPACE:
                 self.__strValue = self.__strValue[:-1]
                 self.value(self.__strValue)
-                print(self.__strValue, self.__value)
+               # print(self.__strValue, self.__value)
 
                     
     def render(self):
@@ -139,9 +139,12 @@ class NumberInput():
             return self.__value
         else:
             val = str(val)
+            # print(val, "Cadena")
             try:
                 self.__value = int(val)
+                # self.__value = float(val) #--> Cambiamos la cadena a valor entero con coma flotante y asi 'no casca'
                 self.__strValue = val
+                print(self.__value, self.__strValue)
             except:
                 print("Uy! hay un error! Miratelo -- Zona value")
                 pass
@@ -250,7 +253,8 @@ class mainApp():
                     nuevaUnidad = self.selector.unidad()
                     print(nuevaUnidad)
                     temperatura = self.termometro.convertir(grados, nuevaUnidad)
-                    self.entrada.value(temperatura)
+                    # print(temperatura)
+                    self.entrada.value(int (temperatura))
             # Pintamos el fondo de pantalla --> para no dejar rastros de cambio de unidades
             self.__screen.fill((244,236,203))    
                 

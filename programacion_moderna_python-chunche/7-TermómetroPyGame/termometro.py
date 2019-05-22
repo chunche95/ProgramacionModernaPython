@@ -123,7 +123,7 @@ class NumberInput():
                     
     def render(self):
         # Renderizar cajon de texto de la temperatura --> font.render solo pinta cadenas de texto
-        textBlock = self.__font.render(self.__strValue, True, (74,74,74))
+        textBlock = self.__font.render(self.__strValue, True, (74,74,74)) # 
         rect = textBlock.get_rect()
         rect.left = self.__position[0]
         rect.top = self.__position[1]

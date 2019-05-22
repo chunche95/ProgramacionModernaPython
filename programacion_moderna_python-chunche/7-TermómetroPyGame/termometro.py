@@ -21,16 +21,24 @@ class Termometro():
 
 class NumberInput():
     # Atributos
-    __valor = 0
+    __value = 0
     __strValue = "0"
     __position = [0,0]
     __size = [0,0]
     # Constructor
     def __init__(self,value = 0):
         self.__font = pygame.font.SysFont("Arial", 24)
-    
+        # Entrada del valor numerico
+        self.value(value)
+        # Esto hace lo mismo que el value value
+#        try:
+#            self.__value = int(value) # Comprueba que sea un integer
+#            self.__strValue = str(value) # Conversion a string
+#        except:
+#            print("Error en los datos de entrada - Evaluación realizada en las lineas de la clase __init__ (line:29) ")
+#            pass
     def render(self):
-        # Renderizar cajon de texto de la temperatura
+        # Renderizar cajon de texto de la temperatura --> font.render solo pinta cadenas de texto
         textBlock = self.__font.render(self.__strValue, True, (74,74,74))
         rect = textBlock.get_rect()
         rect.left = self.__position[0]

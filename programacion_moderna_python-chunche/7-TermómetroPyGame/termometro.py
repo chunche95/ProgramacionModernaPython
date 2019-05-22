@@ -53,7 +53,7 @@ class Termometro():
         else:
             resultado = grados
         
-        return resultado
+        return "{:10.2f}".format(resultado) # Devuelve el resultado de la conversion de la temperatura con un numero de 10 unidades y 2 decimales (maximo)
         
 
 class Selector():
@@ -87,6 +87,7 @@ class NumberInput():
     __strValue = ""
     __position = [0,0]
     __size = [0,0]
+    __pointsCount = 0
     # Constructor
     def __init__(self,value = 0):
         self.__font = pygame.font.SysFont("Arial", 24)
@@ -104,13 +105,17 @@ class NumberInput():
         if event.type == KEYDOWN:
             # Tres formas:
             # if event.key == K_0 or event.key == K_1
-            if event.unicode.isdigit() and len(self.__strValue) < 10:
+            if event.unicode.isdigit() and len(self.__strValue) < 10 or (event.unicode == '.' and self.__pointsCount == 0) :
             #if event.unicode in '0123456789':
                 self.__strValue += event.unicode
                 self.value(self.__strValue)
+                if event.unicode == '.':
+                    self.__pointsCount += 1
                # print(event.unicode)
                # print(self.__strValue, self.__value)
             elif event.key == K_BACKSPACE:
+                if self.__strValue[-1] == '.':
+                    self.__pointsCount -= 1
                 self.__strValue = self.__strValue[:-1]
                 self.value(self.__strValue)
                # print(self.__strValue, self.__value)
@@ -141,10 +146,14 @@ class NumberInput():
             val = str(val)
             # print(val, "Cadena")
             try:
-                self.__value = int(val)
-                # self.__value = float(val) #--> Cambiamos la cadena a valor entero con coma flotante y asi 'no casca'
+                # self.__value = int(val)
+                self.__value = float(val) #--> Cambiamos la cadena a valor entero con coma flotante y asi 'no casca'
                 self.__strValue = val
                 print(self.__value, self.__strValue)
+                if '.' in self.__strValue:
+                    self.__pointsCount = 1
+                else:
+                    self.__pointsCounts = 0
             except:
                 print("Uy! hay un error! Miratelo -- Zona value")
                 pass
@@ -254,7 +263,7 @@ class mainApp():
                     print(nuevaUnidad)
                     temperatura = self.termometro.convertir(grados, nuevaUnidad)
                     # print(temperatura)
-                    self.entrada.value(int (temperatura))
+                    self.entrada.value(temperatura)
             # Pintamos el fondo de pantalla --> para no dejar rastros de cambio de unidades
             self.__screen.fill((244,236,203))    
                 

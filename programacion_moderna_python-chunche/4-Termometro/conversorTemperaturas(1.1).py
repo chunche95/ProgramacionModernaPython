@@ -10,7 +10,7 @@
 # @Version: 1.1
 # @Author: Chunche
 #
-#         TERMOTETRO().
+#         TERMOMETRO().
 #  |~~~~~~~~~~~~~~~~~~~~~~~~~|
 #  |     unidadM[C,F]        |  ----\                        ESTADO.
 #  |     temperatura         |  =====> (Salida por pantalla de la temperatura convertida.)
@@ -69,10 +69,17 @@ t = Termometro()
 # Unidades de medida
 print(t.unidadMedida())
 
-# Inicializamos con una temperatura de entrada
+# Inicializamos con una temperatura de entrada de pruebas
 t.temp(32)
 
+
 #Sacamos por pantalla la conversion del dato inicializado
+print(t.mide('F'))
+print(t.mide('C'))
+
+# Prueba de dato 2
+t.temp(64)
+
 print(t.mide('F'))
 print(t.mide('C'))
 

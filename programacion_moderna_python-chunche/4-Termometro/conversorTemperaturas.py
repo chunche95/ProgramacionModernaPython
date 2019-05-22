@@ -58,7 +58,14 @@ class Termometro():
 c = Termometro()
 # Conversion
 print(c.conversor(0,"C"))
-print(c.conversor(32,"F"))
+print(c.conversor(95,"F"))
 
+# Modulo de pruebas 2
+#t = Termometro()
+#t.temp(40) # Asigno el valor 40 a termometro
+#t.mide('C')
+#t.mide('F')
+
+#t.unidadMedida()
 
 

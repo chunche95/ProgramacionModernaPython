@@ -29,4 +29,4 @@ git push origin master
 echo -e "\e[0;36m Archivos Subidos \t"
 sleep 5
 
-clear
+#clear

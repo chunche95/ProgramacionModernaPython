@@ -7,17 +7,20 @@
 
 param=$1
 echo "-------------------------------------------"
-echo -e "\e[1;32m Estado de repositorio... \n"
+echo -e "\e[1;37m Estado de repositorio... \n"
 echo "-------------------------------------------"
+echo "\n"
 git status
 sleep 3
 echo "-----------------------------------------------------"
-echo -e "\e[1;32m Añadiendo cambios a zona 'de envio'... "
+echo -e "\e[1;37m Añadiendo cambios a zona 'de envio'... "
 echo "-----------------------------------------------------"
+echo "\n"
 git add .
 echo "-----------------------------------------------------"
-echo -e "\e[1;32m  Añadiendo comentario a los cambios..."
+echo -e "\e[1;37m  Añadiendo comentario a los cambios..."
 echo "-----------------------------------------------------"
+echo "\n"
 if [ -z $param ]
 then
 	echo "=========================================================="
@@ -32,12 +35,14 @@ else
 	git commit -m "$1"
 fi
 echo "---------------------------------"
-echo -e "\e[1;32m Subiendo archivos..."
+echo -e "\e[1;37m Subiendo archivos..."
 echo "--------------------------------"
+echo "\n"
 git push origin master
 echo "--------------------------------"
-echo -e "\e[0;36m Archivos Subidos \t"
+echo -e "\e[1;36m Archivos Subidos \t"
 echo "--------------------------------"
+echo "\n"
 sleep 5
 
 #clear

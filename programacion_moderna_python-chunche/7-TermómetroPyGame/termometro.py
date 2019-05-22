@@ -19,10 +19,115 @@ class Termometro():
     def __init__(self):
         self.custome = pygame.image.load("pigmonchu/images/termo1.png")
 
+class NumberInput():
+    # Atributos
+    __valor = 0
+    __strValue = "0"
+    __position = [0,0]
+    __size = [0,0]
+    # Constructor
+    def __init__(self,value = 0):
+        self.__font = pygame.font.SysFont("Arial", 24)
+    
+    def render(self):
+        # Renderizar cajon de texto de la temperatura
+        textBlock = self.__font.render(self.__strValue, True, (74,74,74))
+        rect = textBlock.get_rect()
+        rect.left = self.__position[0]
+        rect.top = self.__position[1]
+        rect.size = self.__size
+        
+        # Devolver valor por diccionario
+#        return {
+#            "fondo": rect,
+#            "texto": textBlock
+#            }
+
+        # Devolver valor por tupla/lista
+        return (rect, textBlock)
+    
+    # Constructores getter y setter
+    def value(self, val= None):
+        if val == None:
+            return self.__value
+        else:
+            val = str(val)
+            try:
+                self.__value = int(val)
+                self.__strValue = val
+            except:
+                print("Uy! hay un error! Miratelo -- Zona value")
+                pass
+            
+    def width(self, val=None):
+        if val == None:
+            return self.__size[0]
+        else:
+            try:
+                self.__size[0] = int(val)
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def width")
+                pass
+    
+    def height(self, val=None):
+        if val == None:
+            return self.__size[1]
+        else:
+            try:
+                self.__size[1] = int(val)
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def height")
+                pass
+            
+    
+    def size(self, val= None):
+        if val == None:
+            return self.__size
+        else:
+            try:
+                # w = int(val[0])
+                # h = int(val[1])
+                self.__size = [int(val[0]), int(val[1])]
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def size")
+                pass
+            
+    def posX(self, val=None):
+        if val == None:
+            return self.__position[0]
+        else:
+            try:
+                self.__position[0] = int(val)
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def width")
+                pass
+        
+    def posY(self, val=None):
+        if val == None:
+            return self.__position[1]
+        else:
+            try:
+                self.__position[1] = int(val)
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def width") 
+                pass
+            
+    def pos(self, val=None):
+        if val == None:
+            return self.__position
+        else:
+            try:
+                self.__position = [int(val[0]), int(val[1])]
+            except:
+                print("Uy! hay un error! Miratelo -- en zona def width")
+                pass
+                        
+            
+   
 class mainApp():
     termometro = None
     entrada = None
-    selectro = None
+    selector = None
     
     def __init__(self):
         # Pantalla principal - dimensiones
@@ -34,6 +139,9 @@ class mainApp():
         self.__screen.fill((240,236,200))
         
         self.termometro = Termometro()
+        self.entrada = NumberInput()
+        self.entrada.pos((106,58))
+        self.entrada.size((133,28))
         
     def __on_close(self):
         pygame.quit()
@@ -44,8 +152,21 @@ class mainApp():
             for event in pygame.event.get():
                 if event.type == QUIT:
                     self.__on_close()
-                    
+                
+            # Dibujamos el termometro en su posicion    
             self.__screen.blit(self.termometro.custome, (50,34))
+            
+            # Dibujamos el cuadro de texto
+            # Renderizacion de la tupla con el fondo del text block
+            # Obtenemos el rectángulo blanco y foto de texto y  lo asignamos a la variable text
+            text = self.entrada.render()
+            
+            # Pintamos el rectangulo blanco con sus datos, posicion y tamaño que estan en text[0]
+            pygame.draw.rect(self.__screen, (255,255,255), text[0])
+            
+            #Pintamos la foto del texto(text[1])
+            self.__screen.blit(text[1],self.entrada.pos())
+            
             # Renderizacion de pantalla
             pygame.display.flip()
                     

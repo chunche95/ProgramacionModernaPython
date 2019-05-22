@@ -65,13 +65,20 @@ class mainApp(Tk):
 
     def validateTemperature(self, *args):
          print(self.temperatura.get())
+         #for item in args:
+         #    print(item)
+         #print(args[0])
+         #print(args[1])
+         
          nuevoValor = self.temperatura.get()
+         print("Nuevo Valor: ", nuevoValor , " vs valor Anterior" , self.__temperaturaAnt)
          try:
              float(nuevoValor)
              self.__temperaturaAnt = nuevoValor
+             print("EEEY! Fijamos Valor anterior: ", self.__temperaturaAnt)
          except:
              self.temperatura.set(self.__temperaturaAnt)
-         
+             print("CHEEE! OJO! Recuperando Valor anterior: ", self.__temperaturaAnt)
 
 if __name__ == '__main__':
     app = mainApp()

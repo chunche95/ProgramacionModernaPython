@@ -7,7 +7,7 @@
 
 param=$1
 echo "-------------------------------------------"
-echo -e "\e[1;30m Estado de repositorio... \e"
+echo -e "\e[1;35m Estado de repositorio... \e"
 echo "-------------------------------------------"
 echo ""
 git status

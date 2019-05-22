@@ -23,7 +23,7 @@ else
 	git commit -m "$1"
 fi
 
-echo -e "e[1;32m Subiendo archivos..."
+echo -e "\e[1;32m Subiendo archivos..."
 git push origin master
 
 echo -e "\e[0;36m Archivos Subidos \t"

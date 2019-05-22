@@ -45,9 +45,13 @@ class NumberInput():
             if event.unicode.isdigit() and len(self.__strValue) < 10:
             #if event.unicode in '0123456789':
                 self.__strValue += event.unicode
+                self.value(self.__strValue)
                 print(event.unicode)
+                print(self.__strValue, self.__value)
             elif event.key == K_BACKSPACE:
-                self.__strValue = self.__strValue[0:-1]
+                self.__strValue = self.__strValue[:-1]
+                self.value(self.__strValue)
+                print(self.__strValue, self.__value)
 
                     
     def render(self):

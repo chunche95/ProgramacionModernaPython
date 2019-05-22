@@ -30,16 +30,22 @@ from tkinter import ttk
 class mainApp(Tk):
     entrada = None
     tipoUnidad = None
+    
+    __temperaturaAnt = ''
+    
     def __init__(self):
         Tk.__init__(self)
         self.title("Termómetro")
-        self.geometry("210x150")
-        self.configure(bg="#DED798")
+        # Tamaño de la pantalla
+        self.geometry("180x130")
+        # Color de fondo
+        #self.configure(bg="#DED798")
         # Evitar la rendimension
         self.resizable(0,0)
         
         # Variables de control: Variables que responden a eventos, controlan cambios
         self.temperatura = StringVar(value="")
+        self.temperatura.trace("w", self.validateTemperature) # write,read,unset
         self.tipoUnidad = StringVar(value="F")
         
         # Creacion del método que hace el diseño
@@ -52,11 +58,20 @@ class mainApp(Tk):
         # Botones
         self.rb1 = ttk.Radiobutton(self, text="Fahrenheit", variable=self.tipoUnidad, value="F").place(x=20,y=60)
         self.rb2 = ttk.Radiobutton(self, text="Celsius", variable=self.tipoUnidad, value="C").place(x=20,y=80)
-        self.configure(bg="#DED798")
+        
         
     def start(self):
         self.mainloop()
 
+    def validateTemperature(self, *args):
+         print(self.temperatura.get())
+         nuevoValor = self.temperatura.get()
+         try:
+             float(nuevoValor)
+             self.__temperaturaAnt = nuevoValor
+         except:
+             self.temperatura.set(self.__temperaturaAnt)
+         
 
 if __name__ == '__main__':
     app = mainApp()

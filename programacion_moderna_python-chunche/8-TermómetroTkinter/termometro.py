@@ -56,8 +56,8 @@ class mainApp(Tk):
         # Texto de 'Grados:'
         self.lblUnidad = ttk.Label(self, text="Grados:").place(x=15, y=45)
         # Botones
-        self.rb1 = ttk.Radiobutton(self, text="Fahrenheit", variable=self.tipoUnidad, value="F").place(x=20,y=60)
-        self.rb2 = ttk.Radiobutton(self, text="Celsius", variable=self.tipoUnidad, value="C").place(x=20,y=80)
+        self.rb1 = ttk.Radiobutton(self, text="Fahrenheit", variable=self.tipoUnidad, value="F", command=self.selected).place(x=20,y=60)
+        self.rb2 = ttk.Radiobutton(self, text="Celsius", variable=self.tipoUnidad, value="C", command=self.selected).place(x=20,y=80)
         
         
     def start(self):
@@ -79,6 +79,22 @@ class mainApp(Tk):
          except:
              self.temperatura.set(self.__temperaturaAnt)
              print("CHEEE! OJO! Recuperando Valor anterior: ", self.__temperaturaAnt)
+             
+             
+    def selected(self):
+        resultado = 0
+        toUnidad = self.tipoUnidad.get()
+        grados = float(self.temperatura.get())
+        
+        if toUnidad == 'F':
+            resultado = grados * 9/5 + 32
+        elif toUnidad == 'C':
+            resultado = (grados - 32 ) * 5
+        else:
+            print("No se ha seleccionado ni 'C' ni 'F'")
+            resultado = grados
+        # Devolvemos el valor convertido
+        self.temperatura.set(resultado)
 
 if __name__ == '__main__':
     app = mainApp()

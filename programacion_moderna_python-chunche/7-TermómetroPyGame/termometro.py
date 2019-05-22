@@ -19,10 +19,34 @@ class Termometro():
     def __init__(self):
         self.custome = pygame.image.load("pigmonchu/images/termo1.png")
 
+class Selector():
+    __tipoUnidad = "C"
+    __valor = 0
+    
+    def __init__(self, unidad="C"):
+        self.__customes = []
+        self.__customes.append(pygame.image.load("pigmonchu/images/posiF.png"))
+        self.__customes.append(pygame.image.load("pigmonchu/images/posiC.png"))
+        
+        self.tipoUnidad = unidad
+        
+    def custome(self):
+        if self.__tipoUnidad == 'F':
+            return self.__customes[0]
+        else:
+            return self.__customes[1]
+        
+    def on_event(self,event):
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if self.__tipoUnidad == 'F':
+                self.__tipoUnidad = 'C'
+            else:
+                self.__tipoUnidad = 'F'
+
 class NumberInput():
     # Atributos
     __value = 0
-    __strValue = "0"
+    __strValue = ""
     __position = [0,0]
     __size = [0,0]
     # Constructor
@@ -164,9 +188,11 @@ class mainApp():
         self.__screen.fill((240,236,200))
         
         self.termometro = Termometro()
-        self.entrada = NumberInput()
+        self.entrada = NumberInput("cadena de entrada inicial - (borrar)")
         self.entrada.pos((106,58))
         self.entrada.size((133,28))
+        
+        self.selector = Selector()
         
     def __on_close(self):
         pygame.quit()
@@ -181,7 +207,10 @@ class mainApp():
                 # Comporbacion de evento de la entrada de valores, valores numericos
                 self.entrada.on_event(event)
                 
-                
+                self.selector.on_event(event)
+            
+            # Pintamos el fondo de pantalla   
+            self.__screen.fill((244,236,203))    
                 
             # Dibujamos el termometro en su posicion    
             self.__screen.blit(self.termometro.custome, (50,34))
@@ -196,6 +225,9 @@ class mainApp():
             
             #Pintamos la foto del texto(text[1])
             self.__screen.blit(text[1],self.entrada.pos())
+            
+            # Renderizacion y dibujamos el selector
+            self.__screen.blit(self.selector.custome(),(112,153))
             
             # Renderizacion de pantalla
             pygame.display.flip()

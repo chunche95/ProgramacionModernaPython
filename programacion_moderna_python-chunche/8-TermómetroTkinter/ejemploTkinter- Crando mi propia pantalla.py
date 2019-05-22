@@ -31,10 +31,12 @@ class mainApp(Tk): # Hereda de Tk()
         self.title("Mi primera ventana")
         self.configure(bg = "lightblue")
     def start(self):
-        self.root.mainloop()
+        self.mainloop()
 if __name__ == '__main__':
     app = mainApp()
     # Creacion d ela ventana
     app.start()
 
- 
+ttk.Button
+ttk.Radiobutton
+ttk.Entry

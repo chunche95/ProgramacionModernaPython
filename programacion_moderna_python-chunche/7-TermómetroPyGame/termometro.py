@@ -37,6 +37,19 @@ class NumberInput():
 #        except:
 #            print("Error en los datos de entrada - Evaluación realizada en las lineas de la clase __init__ (line:29) ")
 #            pass
+
+    def on_event(self,event):
+        if event.type == KEYDOWN:
+            # Tres formas:
+            # if event.key == K_0 or event.key == K_1
+            if event.unicode.isdigit() and len(self.__strValue) < 10:
+            #if event.unicode in '0123456789':
+                self.__strValue += event.unicode
+                print(event.unicode)
+            elif event.key == K_BACKSPACE:
+                self.__strValue = self.__strValue[0:-1]
+
+                    
     def render(self):
         # Renderizar cajon de texto de la temperatura --> font.render solo pinta cadenas de texto
         textBlock = self.__font.render(self.__strValue, True, (74,74,74))
@@ -160,6 +173,11 @@ class mainApp():
             for event in pygame.event.get():
                 if event.type == QUIT:
                     self.__on_close()
+                
+                # Comporbacion de evento de la entrada de valores, valores numericos
+                self.entrada.on_event(event)
+                
+                
                 
             # Dibujamos el termometro en su posicion    
             self.__screen.blit(self.termometro.custome, (50,34))

@@ -1,0 +1,19 @@
+Proyecto en Python 3.
+
+Crear un sitio web completamente desde cero utilizando Python (python3), y flask (framework de aplicaciones web). 
+
+Este ejemplo plantea la creación de un sitio con una navegación dinámica de manera similar  como se haría con PHP. 
+Además terminaremos desplegando nuestra aplicación en un servicio de la nube llamado Heroku.
+
+Pasos:
+1- Instalar flask: $ python -m pip install --upgrade pip
+2- Crear archivo index.py 
+3- Ejecutar la primera prueba en localhost: $ python index.py
+4- Creamos la página  principal de la web
+5- Activamos el modo debug ON. -> degug=True
+6- Instalar el paquete virtual env -> pip install virtualenv
+7- Crear un src del proyecto.
+8- Crear el entorno virtual -> python -m venv nombreEntorno
+9- Acceder a la carpeta de Scrips e instalar flask -> cd nombreEntorno && pip install flask
+10- 
+@Author: Chunche

@@ -13,3 +13,5 @@ print(sumaTodos(3, doble))
 # Ahora el triple, hasta el 100
 print(sumaTodos(100, triple))
 
+for v=0 to 3:
+    print v

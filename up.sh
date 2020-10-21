@@ -14,10 +14,14 @@ echo ""
 echo "-------------------------------------------"
 echo ""
 git README.md
-git nota "Introduction for this project - Pau Quiz"
+git nota "Introduction for this project - Pau"
 git sube
 echo "-------------------------------------------"
 echo ""
+git add IntroductionToPythonAndProgrammingBasic-Cisco-master/*
+git nota "IntroductionToPythonAndProgrammingBasic-Cisco-master"
+git sube
+echo "-------------------------------------------"
 git add .
 git nota "Files project"
 git sube

@@ -31,7 +31,6 @@ echo ""
 echo "+--------------------------------------------------+"
 echo "| Fin de ejecución del script - Actualizando repo. |"
 echo "+--------------------------------------------------+"
-read -p "Pulse ENTER para salir" salir
 clear
 echo "==================================================="
 git status
@@ -46,5 +45,3 @@ echo "				 © Human Computing ® "
 echo "				█║▌│█│║▌║││█║▌║▌║█║▌│█"
 echo "			_________________________________"
 echo ""
-sleep 4
-clear

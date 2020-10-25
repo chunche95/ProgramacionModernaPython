@@ -82,11 +82,12 @@ input, select, textarea {
 
 	*, *:before, *:after {
 		box-sizing: inherit;
+		filter: blur(0.1px);
 	}
-
+	
 	body {
 		background: rgba(4,4,4,0.75);
-		background-image: url("../../images/bg.jpg");
+		background-image: url("../../images/bg-3.jpg");
 		background-position: top center;
 		background-size: cover;
   		background-repeat: no-repeat;
@@ -102,7 +103,7 @@ input, select, textarea {
 			-webkit-transition: none !important;
 			-ms-transition: none !important;
 			transition: none !important;
-			filter: blur(6px);
+			
 		}
 
 	body, input, select, textarea {

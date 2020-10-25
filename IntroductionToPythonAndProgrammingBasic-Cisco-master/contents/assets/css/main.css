@@ -82,16 +82,10 @@ input, select, textarea {
 
 	*, *:before, *:after {
 		box-sizing: inherit;
-		filter: blur(0.1px);
 	}
-	
+
 	body {
-		background: rgba(4,4,4,0.75);
-		background-image: url("../../images/bg-3.jpg");
-		background-position: top center;
-		background-size: cover;
-  		background-repeat: no-repeat;
-		
+		background: #1f2e4a;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -103,7 +97,6 @@ input, select, textarea {
 			-webkit-transition: none !important;
 			-ms-transition: none !important;
 			transition: none !important;
-			
 		}
 
 	body, input, select, textarea {
@@ -113,9 +106,6 @@ input, select, textarea {
 		font-weight: 300;
 		letter-spacing: 0.025em;
 		line-height: 1.75em;
-	}
-	body:hover{
-		filter: blur(-6px);
 	}
 
 	a {
@@ -203,7 +193,7 @@ input, select, textarea {
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
 	}
-/* Container. */
+/* Container */
 
 	.container {
 		margin: 0 auto;
@@ -1387,15 +1377,7 @@ input, select, textarea {
 				}
 
 				.row > .col-12-narrower {
-
 					width: 100%;
-					position: relative;
-					z-indez: 10;
-					background-color: #f00;
-					position: absolute;
-					z-index: -1;
-					top: center;
-					opacity: 0.2;
 				}
 
 				.row > .off-12-narrower {
@@ -2321,13 +2303,12 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background: rgba(4,4,4,0.75);
+			background-color: #83d3c9;
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
 			background-size: 25em, 25em;
 			color: #fff;
-			border-radius: 2%;
 		}
 
 			.wrapper.style2 input[type="button"]:hover,
@@ -2358,13 +2339,8 @@ input, select, textarea {
 				}
 
 		.wrapper.style3 {
-			background: rgba(5,5,5, 0.8);
+			background: #fff;
 			color: inherit;
-			opacity: 1;
-			border-radius: 5%
-		}
-		.wrapper.style3:hover{
-			 background: rgba(5,5,5,0.65)
 		}
 
 		.wrapper.style4 {
@@ -2744,7 +2720,7 @@ input, select, textarea {
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/dirty3.png"), url("../../images/banner.jpg");
+		background-image: url("images/light-tl.svg"), url("images/light-tr.svg"), url("images/overlay.png"), url("../../images/banner.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
@@ -2760,7 +2736,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: #C0C0C0;
+		background: #e8eef481;
 		color: #7c8081;
 		padding: 5em 5em 10em 5em;
 		text-align: center;
@@ -3088,7 +3064,7 @@ input, select, textarea {
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
 				transition: transform 0.5s ease;
-				padding-bottom: 1px;		
+				padding-bottom: 1px;
 			}
 
 			#navButton {

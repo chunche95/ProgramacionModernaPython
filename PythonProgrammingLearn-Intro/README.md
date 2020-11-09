@@ -23,7 +23,7 @@
 <a href="pythonOperacionesSencillas.md" target="_blank" rel="noopener noreferrer">Operaciones sencillas teoría</a>
 
 <h2>Primer programa</h2>
-<a href="pythonPrimerPrograma" target="_blank" rel="noopener noreferrer">Primer programa en Python 3</a>
+<a href="pythonPrimerPrograma.md" target="_blank" rel="noopener noreferrer">Primer programa en Python 3</a>
 
 <h2>Introducción a proyectos</h2>
 <p>

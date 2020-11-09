@@ -36,7 +36,8 @@
             <ul>
                 <li><a href="../Proyectos/Bucles" target="_blank" rel="noopener noreferrer">Bucles</a></li>
                 <li><a href="../Proyectos/Funciones" target="_blank" rel="noopener noreferrer">Funciones</a></li>
-                <li><a href="../Proyectos/PrimerEjercicio" target="_blank" rel="noopener noreferrer">ProyectoPáginaWebConPython</a></li>
+                <li><a href="../Proyectos/ProyectoPáginaWebConPython" target="_blank" rel="noopener noreferrer">ProyectoPáginaWebConPython</a></li>
+                <li><a href="../Proyectos/GeneradirDeQR.py" target="_blank" rel="noopener noreferrer">Generador de QRs</a></li>
             </ul>
         </li>            
         <li><a href="../Proyectos/CalculosMatematicosBasicos" target="_blank" rel="noopener noreferrer">Calculos matemáticos básicos</a></li>

@@ -1908,10 +1908,12 @@ input, select, textarea {
 	}
 	.video-container {
 		position: fixed;
-		padding-bottom: 56.25%;
-		padding-top: 30px; height: 0; overflow: hidden;
-		transform: translateX(auto) translateY(60%);
-		z-index: -100;
+		padding-bottom: 47%;
+		padding-top: 0.4%; 
+		height: 0; 
+		overflow: hidden;
+		transform: translateX(auto) translateY(80%);
+		z-index: -10;
 		background-size: cover;
 		width: 100%;
 		height: 100%;

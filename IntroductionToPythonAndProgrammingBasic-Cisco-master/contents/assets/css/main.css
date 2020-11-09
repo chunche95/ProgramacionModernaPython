@@ -1913,6 +1913,8 @@ input, select, textarea {
 		transform: translateX(auto) translateY(60%);
 		z-index: -100;
 		background-size: cover;
+		width: auto;
+		height: auto;
 	}
 	
 	.video-container iframe,

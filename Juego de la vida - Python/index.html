@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>El juego de la vida - Python - HC3.0</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../IntroductionToPythonAndProgrammingBasic-Cisco-master/contents/assets/css/main.css" />
+		<link rel="shortcut icon" href="../IntroductionToPythonAndProgrammingBasic-Cisco-master/images/logo.jpg" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="../IntroductionToPythonAndProgrammingBasic-Cisco-master/contents/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<div class="inner">
+					<h1>
+						<span class="icon major fa-cloud"></span>
+						Hi, <strong>Human</strong>! another fine little space from <a href="https://hc3.sytes.net">HC3</a>.
+					</h1>
+				</div>
+			</section>
+			
+		<!-- One -->
+		<section id="one" class="main style3">
+		<!-- Footer -->
+			<section class="container medium"> <hr><hr><hr>
+				<h1>El juego de la vida de John Conway en Python.</h1>
+				<p class="center">
+                    El matemático JohnHorton Conway creó en un juego matemático en donde se modificaban estados de manera ininterrumpida sin la necesidad de interacción 
+                    de algún jugador. Esto se hace mediante un autómata celular y uan serie de reglas en las cuales se define su nacimiento, supervivencia o muerte. 
+                    Estos tres estados del autómata permiten la generación infinita de estados. La idea general es mostrar como la evolución logra generar increíbles combinaciones. <br>
+                    Para tener una idea completa del juego, en el siguiente enlace, se encuentra el árticulo donde se describe en detalle las reglas y algunas características del mismo. <br>
+                    <cite>
+                        <a href="https://www.ibiblio.org/lifepatterns/october1970.html" target="_blank" rel="noopener noreferrer">Artículo.</a>
+                    </cite>
+                    <hr>
+                    <h5>Reglas del juego.</h5>
+                    <p>
+                        <ul>
+                            <li>Una nueva célula nace cuando.
+                                <ul>
+                                    <li>
+                                        Si una célula está muerta y en la vecindad existen exáctamente tres células vivas se activa.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Una célula sigue viva si.
+                                <ul>
+                                    <li>
+                                        Cuando existen 2 ó 3 células en su vecindad.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Una célula muere cuando.
+                                <ul>
+                                    <li>
+                                        Sobre población - 4 células vivas o más en su vecindad.
+                                    </li>
+                                    <li>
+                                        Aislamiento - No hay células vivas en su vecindad.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        Para definir una vecindad, como en todo autómata celular, tenemos que definir que puede ver una célula. En este caso vamos a movernos en unn plano en dos dimensiones en forma de rejilla,
+                        formalmente lattice. <br>
+                        Si planteamos las reglas en forma de pseudocódigo, obtendremos:
+<pre><blockquote>1. Nace:
+            Si C.viva!= si y V == 3:
+                C.viva = Si 
+        2. Vive: 
+            Si V == 2 o V == 3:
+                C.viva = Si
+        3. Muere:
+            Si V &gt; 2 o V &lt; 3:
+                C.viva = No
+</blockquote>
+</pre>
+                        Son necesarias las librerias de Python 3 de matplotlib y numply. <br>
+                        <a href="lifeGame.py" target="_blank" rel="noopener noreferrer">Ver código</a>
+                    </p>
+					<ul class="icons">
+						<li><a href="https://instagram.com/pau.dev" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com/chunche95" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:paeste95.pb@gmail.com" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<ol> &copy; Human Computing 3.0 </ol>
+						<ol> Design: <a href="https://github.com/chunche95">Chunche95</a></ol>
+					</ul>			
+				</p>
+				<p>
+					Paulino Bermúdez R. 
+				</p>
+			</section>
+	
+		<!-- Scripts -->
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/jquery.min.js"></script>
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/browser.min.js"></script>
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/breakpoints.min.js"></script>
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/util.js"></script>
+			<script src="../IntroductionToPythonAndProgrammingBasic-Cisco-mastercontents/assets/js/main.js"></script>
+
+	</body>
+</html>

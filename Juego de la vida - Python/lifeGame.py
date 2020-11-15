@@ -2,6 +2,7 @@
 import os
 import pygame
 import numpy as np 
+import matplotlib import animation
 import time
 os.system('clear')
 os.system('cls')

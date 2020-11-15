@@ -1912,7 +1912,7 @@ input, select, textarea {
 		padding-top: 0.4%; 
 		height: 0; 
 		overflow: hidden;
-		transform: translateX(auto) translateY(80%);
+		transform: translateX(auto) translateY(85%);
 		z-index: -10;
 		background-size: cover;
 		width: 100%;
@@ -1923,6 +1923,26 @@ input, select, textarea {
 	.video-container iframe,
 	.video-container object,
 	.video-container embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+	}
+	.video-vertical {		
+		z-index: -10;
+		background-size: cover;
+		opacity: 0.21;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		min-width: 100%; 
+		min-height: 100%;
+		background-repeat: repeat;
+	}
+	
+	.video-vertical iframe,
+	.video-vertical object,
+	.video-vertical embed {
 		position: absolute;
 		top: 0;
 		left: 0;

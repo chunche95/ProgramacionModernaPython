@@ -1,0 +1,8 @@
+setup.py
+Paquete/__init__.py
+Paquete/OperacionesSimples/operacionesSimples.py
+Paquete/OperacionesTrigonometricas/trigonometria.py
+Paquete_Matematica_B_sica.egg-info/PKG-INFO
+Paquete_Matematica_B_sica.egg-info/SOURCES.txt
+Paquete_Matematica_B_sica.egg-info/dependency_links.txt
+Paquete_Matematica_B_sica.egg-info/top_level.txt

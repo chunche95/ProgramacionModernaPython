@@ -12,6 +12,10 @@ cursor.execute("SELECT * FROM USUARIOS")
 # Var para manipular los datos
 usuarios = cursor.fetchone()
 print(usuarios)
+print(usuarios[0])
+print(usuarios[1])
+print(usuarios[2])
+
 
 conexion.commit();
 conexion.close(); # Desconectamos

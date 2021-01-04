@@ -4,7 +4,8 @@ from tkinter import filedialog
 
 # ###################################################################    
 def abrir():
-    archivo = filedialog.askopenfilename(title="Abrir")
+    archivo = filedialog.askopenfilename(title="Abrir", initialdir="/", 
+    filetypes=(("Documento Texto","*.txt"),("Archivo Pdf","*.pdf")))
     print(archivo)
 def salir():
     i = messagebox.askquestion("Salir", " ¿Seguro desea salir?")

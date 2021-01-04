@@ -7,6 +7,11 @@ def sumar():
 def restar():
     resultado.set(int(v1.get()) - int(v2.get()) - int(v3.get()))
 
+def mostrar():
+    if opciones.get() == 1:
+        label2.config(text="Has seleccionado salir")        
+    else:
+        label2.config(text="No vas a salir del programa")
 
 root = Tk();
 
@@ -43,5 +48,17 @@ button2 = Button(frame, text="Restar")
 button2.pack()
 button2.config(bd=5, font=("Curier 20"), command = restar)
 
+opciones = IntVar()
+
+label1 = Label(root, text="Seleccione una opcion")
+label1.pack()
+label1.config(bg="red")
+
+Radiobutton(root, text="Salir", variable=opciones, value=1, command=mostrar ).pack()
+Radiobutton(root, text="No salir", variable=opciones, value=2, command=mostrar ).pack()
+
+label2 = Label(root)
+label2.pack()
+label2.config(bg="green")
 # Para que no cierre la ventana 
 root.mainloop();

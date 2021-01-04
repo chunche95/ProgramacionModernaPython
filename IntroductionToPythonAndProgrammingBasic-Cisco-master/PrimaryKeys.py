@@ -6,12 +6,15 @@ conexion = sqlite3.connect("Productos.db") # Establecemos conexion
 cursor = conexion.cursor();
 
 cursor.execute('''
-DROP TABLE PRODUCTOS
+    DROP TABLE PRODUCTOS;
+''');
+cursor.execute('''
+
 CREATE TABLE PRODUCTOS(
     CODIGO_P VARCHAR(10) PRIMARY KEY,
     NOMBRE_P VARCHAR(50),
     SECCION_P VARCHAR(20)
-)
+);
 
 ''')
 

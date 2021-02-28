@@ -1,0 +1,8 @@
+setup.py
+Paquete/__init__.py
+PaqueteMatematicaBasica.egg-info/PKG-INFO
+PaqueteMatematicaBasica.egg-info/SOURCES.txt
+PaqueteMatematicaBasica.egg-info/dependency_links.txt
+PaqueteMatematicaBasica.egg-info/top_level.txt
+Paquete/OperacionesSimples/operacionesSimples.py
+Paquete/OperacionesTrigonometricas/trigonometria.py
